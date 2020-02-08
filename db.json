@@ -1,0 +1,244 @@
+{
+  "quotes": [
+    {
+      "quote": "Heard tell another adventurin’ party went missin’ trying to enter them dark passages ‘neath Mu’uz Derron. Thems adventurin’ types never seem to learn… that place done kilt’ more adventurers than Bog-Toads kill flies! Whut’s that ya say… ‘Whut’s Mu’uz Derron?’ Well that be the ancient floating city of them E-therns. Turned over n’ crashed to the ground long, long ago. Scary place it be.",
+      "type": "towny",
+      "used": false,
+      "id": 1
+    },
+    {
+      "quote": "“I heard tell that there was a fight betwixt the senators from Hardcastle and thems from Dragon’s Cross in the last session – something about not enough coin goin’ for the border defense…”",
+      "type": "towny",
+      "used": false,
+      "id": 2
+    },
+    {
+      "quote": "“Them Shiners be a bunch of ruffians. Think they run the town. Bunch of thugs n’ thieves if ya asks me.”",
+      "type": "towny",
+      "used": false,
+      "id": 3
+    },
+    {
+      "quote": "“That tattoo maker, Woord… he messed up me’ tattoo. Me’ gal’s name be Ogra but he spelled it “Ogre”… now she ain’t me’ gal no more!”",
+      "type": "towny",
+      "used": true,
+      "id": 4
+    },
+    {
+      "quote": "“Some hunters found a body in the woods just south a’ here… couple days before ya Shizzats set up yer camp. Constable Rolf ain’t talkin’ about it… but they say that the corpse had a hole in its chest an’ were missin’ its heart.”",
+      "type": "towny",
+      "used": false,
+      "id": 5
+    },
+    {
+      "quote": "“Somethin’s attackin’ caravans on the King’s Crossin’ that runs across Blackrot Bog. Been three gone missin’ over this last season. No sign of them when it happens. An’ no survivors…”",
+      "type": "towny",
+      "used": false,
+      "id": 6
+    },
+    {
+      "quote": "“That tattoo-man, Woord… he be top-notch. He ain’t takin’ ya with his pricin’… He be fast. I gots ta’ say… he be a true ar-teest!”",
+      "type": "towny",
+      "used": false,
+      "id": 7
+    },
+    {
+      "quote": "“There be sumpin’ in the woods south o’ the town. Big n’ hairy if old Morstenshin be speakin’ the truth. Said he saw the thing when he were fishin’… walkin’ like a man… bigger n’ a bear!”",
+      "type": "towny",
+      "used": false,
+      "id": 8
+    },
+    {
+      "quote": "“Well… seems it done happened again… some idjit tried to steal Myron the Ugly Troll’s head from Farley’s Bridge again. Can’t believe they don’t know about the curse!”",
+      "type": "towny",
+      "used": false,
+      "id": 9
+    },
+    {
+      "quote": "“The council in Nevermore is bought and paid for by them Shiners. Can’t trust a one of ’um.”",
+      "type": "towny",
+      "used": false,
+      "id": 10
+    },
+    {
+      "quote": "“The council of Nevermore are good men and women. Way too many folk are critical of them. They’re just trying to do their job taking care of the town.”",
+      "type": "towny",
+      "used": false,
+      "id": 11
+    },
+    {
+      "quote": "“If I ever catch that tattoo guy Woord alone… I’m gonna give HIM a tattoo. Right in the nose! Gave me an infection, he did!”",
+      "type": "towny",
+      "used": false,
+      "id": 12
+    },
+    {
+      "quote": "“Something attacked one of the Dwarven paddle-barges on its way to Darkenhaven, tore it to pieces. The wreckage blocked the main confluence of the Deepcurrent River and the Blindfish tributary for three days, disrupting trade and causing a flood downriver when it was cleared. No one knows what did it; anything could be hiding in those cave systems. And, the whole crew is missing.”",
+      "type": "towny",
+      "used": false,
+      "id": 13
+    },
+    {
+      "quote": "“Sum thief been knockin’ off tha estates o’ wealthy folk in Ne’rmore. Tha constable be thinkin’ tha thief be a H’a-Elf… ‘er maybe a Human wench. Well… lemme tell ya… whoever she be… words out she got a load o’ loot!” ",
+      "type": "towny",
+      "used": false,
+      "id": 14
+    },
+    {
+      "quote": "“The peak of Mu’uz Derron been crackling with some strange green bolts of lightning on an’ off for since the beginnin’ of the month. That place killed more adventurers than all the great Wyrms combined!”",
+      "type": "towny",
+      "used": false,
+      "id": 15
+    },
+    {
+      "quote": "“Strange, colorful lights have been seen at night in the fields between Darksilver Bay and the Maggotspit Marsh.”",
+      "type": "towny",
+      "used": false,
+      "id": 16
+    },
+    {
+      "quote": "“A Myruun pirate ship got wrecked on a sandbank along the coast not far from here. It’s said they were going to raid Tothenshire, Granthorfe, and maybe even Nevermore, but an unusual low tide stuck it on some rocks. Now most know better than to tangle with Myruun pirates, but then again… there’s probably a kingdom’s worth of stolen loot just sitting out there…”",
+      "type": "towny",
+      "used": false,
+      "id": 17
+    },
+    {
+      "quote": "“Nigh on ten year ago an evil necra’mancer had a tower round these parts. The bastard raised a bunch a dead an’ come at the town. But a group ’o adventurers killed him … thems was called the Blades of Blonne. A’fer he were dead, the townsfolk come out to his tower an’ burnt it down. Nobody goes round there now. It be haunted.” (Note: The rumor-monger does not know the location of the tower. Querying others will not yield the location either. Most have forgotten.)",
+      "type": "towny",
+      "used": false,
+      "id": 18
+    },
+    {
+      "quote": "“People been going missing on the road between here and Prondadol. You heading that way… best be careful. A whole family from Nevermore just disappeared without a trace!”",
+      "type": "towny",
+      "used": false,
+      "id": 19
+    },
+    {
+      "quote": "“NEVER get a tattoo from that guy Woord. My cousin got one from him last year, and he ended up with some green veins in his arm. Cost my cousin 25 Golds to get the Clerics of Aeliera to cure him up!”",
+      "type": "towny",
+      "used": true,
+      "id": 20
+    },
+    {
+      "quote": "“The church o’ Wardane has been aggressively proselytizing throughout the Republic recently, sendin’ out priests to establish missions in most villages. The missionary sent to Nevermore, name o’ Protector Julianna, come just a few days ago, and she’s already ruffled some feathers, dragging backroom deals, shady arrangements, and unfortunate secrets into the open throughout the town.”",
+      "type": "towny",
+      "used": false,
+      "id": 21
+    },
+    {
+      "quote": "“There be more than one of the Townsguards that are thinking that you Shizzats had something to do with that missing gambler. You know, the Sundestian. Heard he was gambling with your people two nights ago and he just up and disappeared. Some say he had a purse full of Hanataz Golds! Better watch yourselves!”",
+      "type": "towny",
+      "used": false,
+      "id": 22
+    },
+    {
+      "quote": "“I heard that one of the senators from Hardcastle was murdered in her quarters in Darkenhaven. Her name was something like Winnow or Winna. She’s been causing quite a stir as she’s been very vocal that the Republic needs to put more coin to the northern border. Said the Orokinoids are getting bolder and crossing the Vile Desolation with larger and larger patrols.”",
+      "type": "towny",
+      "used": false,
+      "id": 23
+    },
+    {
+      "quote": "“The Bronze Bell Hanataz troupe was violently driven out of Fuddlesdown after rumors spread that they were abducting children and forcing them to join their caravan by feeding them potions to temporarily give them the appearance of a Blood-Touch.”",
+      "type": "hanataz",
+      "used": false,
+      "id": 24
+    },
+    {
+      "quote": "“Some dark-cloaked thugs was creepin’ ’round the camp last few nights. Our camp-watch almost caught ’um last night. Said it was three of ’um.”",
+      "type": "hanataz",
+      "used": false,
+      "id": 25
+    },
+    {
+      "quote": "“Mother’s (Salvensa) been really tired these last few weeks… hope she isn’t sick.”",
+      "type": "hanataz",
+      "used": true,
+      "id": 26
+    },
+    {
+      "quote": "“Little Vezzy woke up screamin’ last night… some kind of nightmare. She said she was ’caught afire in some scary, green, burning flame.’ But she said it weren’t no fire… said it was some kind of ’bad thing.’ Mother asked to see her this mornin’ soon as she woke up. They must’a talked fer an hour. Might just be me… but when they come out o’ the wagon… Mother looked scared.”",
+      "type": "hanataz",
+      "used": false,
+      "id": 27
+    },
+    {
+      "quote": "“I heard some Townies talking about some lord from Nevermore name-o ’Herlawin’ or ’Herlin’… somethin’ like that. They said he was tryin’ to buy up all the land ’round here. And some think he’s not above ’doing things’ to get folk to move if they won’t sell….”",
+      "type": "hanataz",
+      "used": false,
+      "id": 28
+    },
+    {
+      "quote": "“I heard some Townies talking about Nevermore. They said there’s some kinda’ ’dark secret’ that’s being kept by the town leaders. Last thing they said was that the town has a curse!”",
+      "type": "hanataz",
+      "used": false,
+      "id": 29
+    },
+    {
+      "quote": "“I just heard that some months back the Red Wagons got attacked around these parts. Said it was just on the far side of the King’s Crossing. Seems the Bonduran Council known about it for some time. Wonder why they been keeping it from us…?”",
+      "type": "hanataz",
+      "used": false,
+      "id": 30
+    },
+    {
+      "quote": "“We got trouble now. I heard that the Constable from Nevermore is blaming us for that missing Sundestian. You know, the one who disappeared when he went to do his business outside the gambling tents night a’fore last. I think his name was Sirdama or something like that. No trace of him found at all. Nothing!”",
+      "type": "hanataz",
+      "used": false,
+      "id": 31
+    },
+    {
+      "quote": "“Now maybe I had too much o’ Stoof’s Redwine, but I could swear I saw one o’ the Jesters sneakin’ out o’ camp a couple nights ago. Couldn’t tell which one. I asked um’ about it… much as you can ask any o’ them clowns anything… seems none of um were the one I saw. Strange thing, that.”",
+      "type": "hanataz",
+      "used": false,
+      "id": 32
+    },
+    {
+      "quote": "“Tonight’s Darktide’s Eve you know. They’ll be putting out the lanterns around Sulset. I don’t know about you… but I’m scared. I heard Brayan talking with Mother. He said something about ‘a prophecy’ and ‘The Year of Fears’ and that ‘we weren’t ready’…. What do you think that means?”",
+      "type": "hanataz",
+      "used": true,
+      "id": 33
+    },
+    {
+      "quote": "“Might be my imagination… but I think Kray’s been edgy lately. He seems to be not sleepin’ at all… always walking round the camp… like he’s looking for something. Or maybe more like he’s worried about something.”",
+      "type": "hanataz",
+      "used": false,
+      "id": 34
+    },
+    {
+      "quote": "“I heard Borag and Calnassé talking. Prondadol is where I hear we’re heading next. I’m not sure if we’re making Dragon’s Cross though. They also said something about somebody named Verasis who lives in Prondadol. Seems as Mother really wants to see that Verasis fellow.”",
+      "type": "hanataz",
+      "used": false,
+      "id": 35
+    },
+    {
+      "quote": "“I heard that Constable Rolf told his men to rough us up if we didn’t leave by mornin’…. Well… lemme tell ya somethin’… he messes with us, he’s the one gonna get a lesson!”",
+      "type": "hanataz",
+      "used": false,
+      "id": 36
+    },
+    {
+      "quote": "“Heard tell it were Orcs that attacked the Red Wagons somewhere ’round here last summer. But the Red Wagons kicked them Orcs’ butts! I hear their Vrenda and Bravda…. Jen’ayea and Faerdin are tough as you know what! And you know they got that Strong-Woman, Gravada… she’s almost nine-foot tall!!”",
+      "type": "hanataz",
+      "used": false,
+      "id": 37
+    },
+    {
+      "quote": "“I overheard Calnassé and Selvra talking the other day. They were talking about the Night Song troupe. Seems somebody tried to assassinate their Vrenda a couple months ago. Almost got the deed done if what I heard was right.”",
+      "type": "hanataz",
+      "used": true,
+      "id": 38
+    },
+    {
+      "quote": "“When we leave here we gotta travel cross Blackrot Bog! There are all kinda’ nasty beasts an creatures livin’ there. They say that some kind o’ dirty magicks flow into that bog from the Murkflow which comes from cursed Mu’uz Derron.” ",
+      "type": "hanataz",
+      "used": false,
+      "id": 39
+    },
+    {
+      "quote": "“I got a tattoo from that Townie, Woord yesterday. It ain’t bad.”",
+      "type": "hanataz",
+      "used": true,
+      "id": 40
+    }
+  ]
+}
