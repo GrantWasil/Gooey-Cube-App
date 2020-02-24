@@ -1,46 +1,22 @@
 import React from 'react'
 
-import quoteService from '../services/quotes'
-
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
-const QuoteForm = ({newQuote, setNewQuote, quoteType, setQuoteType, quotes, setQuotes}) => {
-
-    const handleQuoteChange = (event) => {
-        setNewQuote(event.target.value)
-    }
-    
-    const handleQuoteTypeChange = (event) => {
-    setQuoteType(event.target.value)
-    }
-
-    const addQuote = (event) => {
-    event.preventDefault();
-    const quoteObject = {
-        quote: newQuote,
-        type: quoteType,
-        used: false
-    }
-
-    quoteService
-        .create(quoteObject)
-        .then(returnedQuote => {
-        setQuotes(quotes.concat(returnedQuote))
-        setNewQuote('')
-        })
-    }
-    
+const QuoteForm = ({ onSubmit, handleQuoteChange, quoteValue, handleTypeChange, typeValue}) => {
     return (
-        <Form onSubmit={addQuote}>
-          <Form.Control as="input" value={newQuote} onChange={handleQuoteChange} />
-          <br></br>
-          <Form.Control as='select' value={quoteType} onChange={handleQuoteTypeChange}>
-            <option value="hanataz">Hanataz</option>
-            <option value="towny">Towny</option>
-          </Form.Control>
-          <Button type="submit">save</Button>
-        </Form>
+        <div>
+            <h2>Create a new Rumor</h2>
+            <Form onSubmit={onSubmit}>
+            <Form.Control as="input" value={quoteValue} onChange={handleQuoteChange} />
+            <br></br>
+            <Form.Control as='select' value={handleTypeChange} onChange={typeValue}>
+                <option value="hanataz">Hanataz</option>
+                <option value="towny">Towny</option>
+            </Form.Control>
+            <Button type="submit">save</Button>
+            </Form>
+        </div>
     )
 }
 
