@@ -21,7 +21,7 @@ const App = () => {
   const [quoteType, setQuoteType] = useState('hanataz')
   const [errorMessage, setErrorMessage] = useState(null)
   const [showDeleteWarning, setShowDeleteWarning] = useState(false)
-  const [showQuotes, setShowQuotes] = useState('all');
+  const [showQuotes, setShowQuotes] = useState('all')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
@@ -82,7 +82,8 @@ const App = () => {
   }
 
   const addQuote = (event) => {
-    event.preventDefault();
+    event.preventDefault()
+    quoteFormRef.current.toggleVisibility()
     const quoteObject = {
       quote: newQuote,
       type: quoteType,
@@ -147,6 +148,8 @@ const App = () => {
     )
   }
 
+  const quoteFormRef = React.createRef()
+
   return (
     <div>
       <br></br>
@@ -156,14 +159,14 @@ const App = () => {
           <div className="quotes">
             <p>{user.name} logged in</p>
             <button onClick={() => handleLogout()}>Log Out</button>
-            <Toggleable buttonLabel="new rumor">
+            <Toggleable buttonLabel="new rumor" ref={quoteFormRef}>
               <QuoteForm
                 onSubmit={addQuote}
                 handleQuoteChange={handleQuoteChange}
                 quoteValue={newQuote}
                 handleTypeChange={handleTypeChange}
                 quoteType={quoteType}
-                />
+              />
             </Toggleable>
           </div>
           <QuoteButtons
