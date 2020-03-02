@@ -1,21 +1,40 @@
 import React from 'react'
 
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
 
-const QuoteForm = ({ onSubmit, handleQuoteChange, quoteValue, handleTypeChange, typeValue }) => {
+const QuoteForm = ({ 
+  handleSubmit,
+  quote,
+  type, 
+  chapter
+}) => {
   return (
     <div>
       <h2>Create a new Rumor</h2>
-      <Form onSubmit={onSubmit}>
-        <Form.Control as="input" value={quoteValue} onChange={handleQuoteChange} />
-        <br></br>
-        <Form.Control as='select' value={typeValue} onChange={handleTypeChange}>
-          <option value="hanataz">Hanataz</option>
-          <option value="towny">Towny</option>
-        </Form.Control>
-        <Button type="submit">save</Button>
-      </Form>
+      <form onSubmit={handleSubmit}>
+        <div>
+          new rumor
+          <input {...quote}/>
+        </div>
+        <div>
+          <select {...type}>
+            <option value="hanataz" selected>Hanataz</option>
+            <option value="towny">Towny</option>
+          </select>
+        </div>
+        <div>
+          chapter
+          <select {...chapter}>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" disabled>4</option>
+            <option value="5" disabled>5</option>
+            <option value="6" disabled>6</option>
+            <option value="7" disabled>7</option>
+          </select>
+        </div>
+        <button type="submit">save</button>
+      </form>
     </div>
   )
 }

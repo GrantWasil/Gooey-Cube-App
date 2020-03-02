@@ -4,16 +4,18 @@ import React, { useState, useEffect } from 'react'
 import QuoteList from './components/QuoteList'
 import QuoteForm from './components/QuoteForm'
 import QuoteButtons from './components/QuoteButtons'
-import Navigation from './components/Navigation'
 import Toggleable from './components/Togglable'
 
 // Services
-import quoteService from './services/quotes'
 import loginService from './services/login'
 
 // Style Components
 import CardDeck from 'react-bootstrap/CardDeck'
 import LoginForm from './components/LoginForm'
+
+// Hooks
+import {useField, useResource} from './hooks' 
+
 
 const App = () => {
   const [quotes, setQuotes] = useState([])
@@ -22,15 +24,22 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null)
   const [showDeleteWarning, setShowDeleteWarning] = useState(false)
   const [showQuotes, setShowQuotes] = useState('all')
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   const [loginVisible, setLoginVisible] = useState(false)
 
+  // Login Hooks
+  const username = useField('text')
+  const password = useField('password')
+
+  // Quote Hooks
+  const quotesRoute = useResource('quotes')
+  const quote = useField('text')
+  const type = useField()
+  const chapter = useField()
 
 
   useEffect(() => {
-    quoteService
+    quotesRoute
       .getAll()
       .then(initialQuotes => {
         setQuotes(initialQuotes)
@@ -42,32 +51,32 @@ const App = () => {
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
-      quoteService.setToken(user.token)
+      quotesRoute.setToken(user.token)
     }
   }, [])
 
   const handleDeleteOf = id => {
-    quoteService
+    quotesRoute
       .remove(id)
       .then(setQuotes(quotes.filter(quote => quote.id !== id)))
       .then(setShowDeleteWarning(false))
   }
 
   const handleLogin = async (event) => {
+    const loginUsername = username.value; 
+    const loginPassword = password.value; 
     event.preventDefault()
     try {
-      const user = await loginService.login({
-        username, password
-      })
+      const user = await loginService.login({loginUsername, loginPassword})
 
       window.localStorage.setItem(
         'loggedUser', JSON.stringify(user)
       )
 
-      quoteService.setToken(user.token)
+      quotesRoute.setToken(user.token)
       setUser(user)
-      setUsername('')
-      setPassword('')
+      username.reset()
+      password.reset()
     } catch (exception) {
       setErrorMessage('Wrong credentials')
       setTimeout(() => {
@@ -85,13 +94,16 @@ const App = () => {
     event.preventDefault()
     quoteFormRef.current.toggleVisibility()
     const quoteObject = {
-      quote: newQuote,
-      type: quoteType,
+      quote: quote.value,
+      type: type.value,
+      chapter: chapter.value,
       used: false,
       id: quotes.length + 1,
     }
-
-    quoteService
+    quote.reset()
+    type.reset()
+    chapter.reset()
+    quotesRoute
       .create(quoteObject)
       .then(returnedQuote => {
         setQuotes(quotes.concat(returnedQuote))
@@ -99,19 +111,11 @@ const App = () => {
       })
   }
 
-  const handleQuoteChange = (event) => {
-    setNewQuote(event.target.value)
-  }
-
-  const handleTypeChange = (event) => {
-    setQuoteType(event.target.value)
-  }
-
   const toggleUsedOf = id => {
     const quote = quotes.find(q => q.id === id)
     const changedQuote = { ...quote, used: !quote.used }
 
-    quoteService
+    quotesRoute
       .update(id, changedQuote)
       .then(returnedQuote => {
         setQuotes(quotes.map(quote => quote.id !== id ? quote : returnedQuote))
@@ -138,8 +142,6 @@ const App = () => {
           <LoginForm
             username={username}
             password={password}
-            handleUsernameChange={({ target }) => setUsername(target.value)}
-            handlePasswordChange={({ target }) => setPassword(target.value)}
             handleSubmit={handleLogin}
           />
           <button onClick={() => setLoginVisible(false)}>cancel</button>
@@ -152,6 +154,9 @@ const App = () => {
 
   return (
     <div>
+      {errorMessage != null ?
+        <div>{errorMessage}</div> :
+      <div></div> }
       <br></br>
       {user === null ?
         loginForm() :
@@ -161,11 +166,10 @@ const App = () => {
             <button onClick={() => handleLogout()}>Log Out</button>
             <Toggleable buttonLabel="new rumor" ref={quoteFormRef}>
               <QuoteForm
-                onSubmit={addQuote}
-                handleQuoteChange={handleQuoteChange}
-                quoteValue={newQuote}
-                handleTypeChange={handleTypeChange}
-                quoteType={quoteType}
+                handleSubmit={addQuote}
+                quote={quote}
+                type={type}
+                chapter={chapter}
               />
             </Toggleable>
           </div>

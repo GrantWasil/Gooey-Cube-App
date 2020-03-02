@@ -30,7 +30,7 @@ const Quote = ({ quote, toggleUsed, handleDelete, showDeleteWarning, setShowDele
             {quote.quote} {quote.type}
           </Card.Text>
           <Button variant={background} onClick={toggleUsed}>{label}</Button>
-          <Button variant='danger' onClick={handleOpen}>Delete</Button>
+          <Button variant='danger' onClick={handleDelete}>Delete</Button>
         </Card.Body>
       </Card>
     </div>
