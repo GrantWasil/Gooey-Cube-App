@@ -17,14 +17,16 @@ const QuoteForm = ({
         </div>
         <div>
           <select {...type}>
-            <option value="hanataz" selected>Hanataz</option>
+            <option value="" disabled>Select an Option</option>
+            <option value="hanataz">Hanataz</option>
             <option value="towny">Towny</option>
           </select>
         </div>
         <div>
           chapter
           <select {...chapter}>
-            <option value="1" selected>1</option>
+            <option value="" disabled>Select an Option</option>
+            <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4" disabled>4</option>
@@ -33,7 +35,9 @@ const QuoteForm = ({
             <option value="7" disabled>7</option>
           </select>
         </div>
-        <button type="submit">save</button>
+        { type.value !== '' && chapter.value !== '' 
+        ? <button type="submit">save</button> :
+        <div></div> }
       </form>
     </div>
   )
