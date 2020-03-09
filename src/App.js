@@ -5,22 +5,22 @@ import {
 } from 'react-router-dom'
 
 // Components
-import Quote from './components/Quote'
-import QuoteList from './components/QuoteList'
-import QuoteForm from './components/QuoteForm'
-import QuoteButtons from './components/QuoteButtons'
-import Toggleable from './components/Togglable'
-import LoginForm from './components/LoginForm'
+import GetStarted from './components/GetStarted'
+import Navigation from './components/Navigation'
+import RumorPage from './components/RumorPage'
 
 // Services
 import loginService from './services/login'
 
 // Style Components
-import {CardDeck, Alert, Nav, Navbar} from 'react-bootstrap'
-import { Container } from 'semantic-ui-react'
+import { Container, Divider, Message } from 'semantic-ui-react'
 
 // Hooks
 import {useField, useResource} from './hooks' 
+
+// WebSockets
+import io from 'socket.io-client'
+
 
 
 const App = () => {
@@ -33,6 +33,7 @@ const App = () => {
   const [showQuotes, setShowQuotes] = useState('all')
   const [user, setUser] = useState(null)
   const [loginVisible, setLoginVisible] = useState(false)
+  const [visible, setVisibile] = useState(true)
 
   // Login Hooks
   const username = useField('text')
@@ -139,91 +140,60 @@ const App = () => {
       })
   }
 
-  const loginForm = () => {
-    const hideWhenVisible = { display: loginVisible ? 'none' : '' }
-    const showWhenVisible = { display: loginVisible ? '' : 'none' }
 
-    return (
-      <div>
-        <div style={hideWhenVisible}>
-          <h1>GooeyHelper</h1>
-          <button onClick={() => setLoginVisible(true)}>Get Started</button>
-        </div>
-        <div style={showWhenVisible}>
-          <LoginForm
-            username={username}
-            password={password}
-            handleSubmit={handleLogin}
-          />
-          <button onClick={() => setLoginVisible(false)}>cancel</button>
-        </div>
-      </div>
-    )
-  }
 
   const quoteFormRef = React.createRef()
 
   return (
     <Container>
       {errorMessage != null ?
-        <Alert variant="warning">{errorMessage}</Alert> :
+        <Message size='large' negative>
+          <Message.Header>
+            {errorMessage}
+          </Message.Header>
+        </Message> :
       <div></div> }
-      {message != null ?
-        <Alert variant="success">{message}</Alert> :
-      <div></div> }
-      <br></br>
+      <Divider hidden />
       <div>
         {user === null ?
-          loginForm() : 
+          <GetStarted 
+            visible={visible}
+            setVisibile={setVisibile}
+            username={username}
+            password={password}
+            handleLogin={handleLogin}
+          /> : 
             <div>
             <Router>
-              <Navbar collapseOnSelect expand="lg">
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                  <Nav className="mr-auto">
-                    <Nav.Link href="#" as="span">
-                      <Link to="/">Home</Link>
-                    </Nav.Link>
-                    <Nav.Link href="#" as="span">
-                      <Link to="/rumors">Rumors</Link>
-                    </Nav.Link>
-                    <Nav.Link href="#" as="span">
-                      <Link to="/events">Events</Link>
-                    </Nav.Link>
-                    <Nav.Link href="#" as="span">
-                      <p>{user.name} logged in</p>
-                    </Nav.Link>
-                    <Nav.Link href="#" as="span">
-                      <button onClick={() => handleLogout()}>Log Out</button>
-                    </Nav.Link>
-                  </Nav>
-                </Navbar.Collapse>
-              </Navbar>
-              <Route exact path="/rumors">
-                <div className="quotes">
-                  <Toggleable buttonLabel="new rumor" ref={quoteFormRef}>
-                    <QuoteForm
-                      handleSubmit={addQuote}
-                      quote={quote}
-                      type={type}
-                      chapter={chapter}
-                    />
-                  </Toggleable>
-                </div>
-                <QuoteButtons
+              <Divider hidden/>
+              <Navigation 
+                user={user}
+                handleLogout={handleLogout}
+              />
+              {message != null ?
+                <Message positive>
+                  <Message.Header>
+                    {message}
+                  </Message.Header>
+                </Message> :
+                <div></div>}
+              <br></br>
+              <Route exact path="/rumors" render={() => 
+                <RumorPage 
+                  quoteFormRef={quoteFormRef}
+                  addQuote={addQuote}
+                  quote={quote}
+                  type={type}
+                  chapter={chapter}
                   setShowQuotes={setShowQuotes}
-                />
-                <CardDeck>
-                  <QuoteList
-                    showQuotes={showQuotes}
-                    quotes={quotes}
-                    handleDeleteOf={handleDeleteOf}
-                    toggleUsedOf={toggleUsedOf}
-                    showDeleteWarning={showDeleteWarning}
-                    setShowDeleteWarning={setShowDeleteWarning}
-                  />
-                </CardDeck>
-              </Route>
+                  showQuotes={showQuotes}
+                  quotes={quotes}
+                  handleDeleteOf={handleDeleteOf}
+                  toggleUsedOf={toggleUsedOf}
+                  showDeleteWarning={showDeleteWarning}
+                  setShowDeleteWarning={setShowDeleteWarning}
+                />} />
+    
               <Route path="/events">
                   
               </Route>

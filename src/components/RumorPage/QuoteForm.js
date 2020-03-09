@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {Form, Button, Grid, Header, TextArea} from 'semantic-ui-react'
+
 
 const QuoteForm = ({ 
   handleSubmit,
@@ -8,22 +10,26 @@ const QuoteForm = ({
   chapter
 }) => {
   return (
-    <div>
-      <h2>Create a new Rumor</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          new rumor
-          <input {...quote}/>
-        </div>
-        <div>
+    <Grid verticalAlign='middle' textAlign='center'>
+      <Grid.Column style={{maxWidth: 450}}>
+      <Header as='h2' color='green' textAlign='center'>
+        Create a new Rumor
+      </Header>
+      <Form onSubmit={handleSubmit}>
+        <Form.Field>
+          <label>rumor text</label>
+          <TextArea {...quote}/>
+        </Form.Field>
+        <Form.Field>
+          <label>rumor type</label>
           <select {...type}>
             <option value="" disabled>Select an Option</option>
             <option value="hanataz">Hanataz</option>
             <option value="towny">Towny</option>
           </select>
-        </div>
-        <div>
-          chapter
+        </Form.Field>
+        <Form.Field>
+          <label>chapter</label>
           <select {...chapter}>
             <option value="" disabled>Select an Option</option>
             <option value="1">1</option>
@@ -34,12 +40,13 @@ const QuoteForm = ({
             <option value="6" disabled>6</option>
             <option value="7" disabled>7</option>
           </select>
-        </div>
-        { type.value !== '' && chapter.value !== '' 
-        ? <button type="submit">save</button> :
-        <div></div> }
-      </form>
-    </div>
+        </Form.Field>
+        { type.value !== '' && chapter.value !== '' && quote.value !== ''
+        ? <Button type="submit">save</Button> :
+        <Button disabled>save</Button> }
+      </Form>
+      </Grid.Column>
+    </Grid>
   )
 }
 

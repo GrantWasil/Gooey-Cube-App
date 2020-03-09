@@ -1,21 +1,32 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 // Style Component
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
+import {Menu, Container, Button } from 'semantic-ui-react'
 
-const Navigation = () => {
+const Navigation = ({user, handleLogout}) => {
 
   return (
     <div>
-      <Navbar fixed="top" bg="light" variant="light">
-        <Navbar.Brand href="#">GooeyApp</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="#">Quotes</Nav.Link>
-          <Nav.Link href="#">Combat</Nav.Link>
-          <Nav.Link href="#">Handouts</Nav.Link>
-        </Nav>
-      </Navbar>
+      <Menu fixed='top'>
+        <Container>
+          <Menu.Item header>
+            <Link to="/">Home</Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/rumors">Rumors</Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/events">Events</Link>
+          </Menu.Item>
+          <Menu.Item>
+            <p>{user.name} logged in</p>
+          </Menu.Item>
+          <Menu.Item>
+            <Button onClick={() => handleLogout()}>Log Out</Button>
+          </Menu.Item>
+        </Container>  
+      </Menu>
     </div>
   )
 }

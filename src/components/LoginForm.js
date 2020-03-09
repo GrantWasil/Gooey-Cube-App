@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
 const LoginForm = ({
   handleSubmit,
@@ -10,21 +10,36 @@ const LoginForm = ({
 }) => {
   
   return (
-    <div>
-      <h2>Login</h2>
-
-      <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>username:</Form.Label>
-          <Form.Control {...username} />
-          <Form.Label>password:</Form.Label>
-          <Form.Control {...password} />
-          <Button variant="primary" type="submit">
-            login
-          </Button>
-        </Form.Group>
-       </Form>
-    </div>
+    <Grid textAlign='center' style={{height: '100vh' }} verticalAlign='middle'>
+      <Grid.Column style={{maxWidth: 450}}>
+        <Header as='h2' color='green' textAlign='center'>
+          Log-in to your GooeyHelper Account
+        </Header>
+          <Form size='large' onSubmit={handleSubmit}>
+            <Segment stacked>
+              <Form.Input 
+                fluid icon='user' 
+                iconPosition='left' 
+                placeholder='username'
+                {...username} 
+              />
+              <Form.Input 
+                fluid
+                icon='lock'
+                iconPosition='left'
+                placeholder='password'
+                {...password} 
+              />
+              <Button color='green' fluid size='large' type="submit">
+                login
+              </Button>
+            </Segment>
+          </Form>
+          <Message>
+            Need an account? Message GooeyGrant on <a href='#'>Discord</a> to get started.
+          </Message>
+        </Grid.Column>
+    </Grid>
   )
 }
 
