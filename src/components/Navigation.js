@@ -17,10 +17,16 @@ const Navigation = ({user, handleLogout}) => {
             <Link to="/rumors">Rumors</Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to="/events">Events</Link>
+            <Link to="/events">Event</Link>
           </Menu.Item>
           <Menu.Item>
-            <p>{user.name} logged in</p>
+            <Link to='/combat'>Combat</Link>
+          </Menu.Item>
+          <Menu.Item color='green'>
+            <Link to='/players'>Players</Link>
+          </Menu.Item>
+          <Menu.Item position='right'>
+            <p>{user.name} is logged in</p>
           </Menu.Item>
           <Menu.Item>
             <Button onClick={() => handleLogout()}>Log Out</Button>

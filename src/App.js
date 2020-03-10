@@ -8,6 +8,7 @@ import {
 import GetStarted from './components/GetStarted'
 import Navigation from './components/Navigation'
 import RumorPage from './components/RumorPage'
+import HomePage from './components/HomePage'
 
 // Services
 import loginService from './services/login'
@@ -34,6 +35,8 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [loginVisible, setLoginVisible] = useState(false)
   const [visible, setVisibile] = useState(true)
+  const [chapterSelection, setChapterSelection] = useState(1)
+  const [randomQuote, setRandomQuote] = useState(0)
 
   // Login Hooks
   const username = useField('text')
@@ -178,6 +181,9 @@ const App = () => {
                 </Message> :
                 <div></div>}
               <br></br>
+              <Route exact path="/" render={() => 
+                <HomePage />
+              } />
               <Route exact path="/rumors" render={() => 
                 <RumorPage 
                   quoteFormRef={quoteFormRef}
@@ -192,6 +198,10 @@ const App = () => {
                   toggleUsedOf={toggleUsedOf}
                   showDeleteWarning={showDeleteWarning}
                   setShowDeleteWarning={setShowDeleteWarning}
+                  chapterSelection={chapterSelection}
+                  setChapterSelection={setChapterSelection}
+                  randomQuote={randomQuote}
+                  setRandomQuote={setRandomQuote}
                 />} />
     
               <Route path="/events">

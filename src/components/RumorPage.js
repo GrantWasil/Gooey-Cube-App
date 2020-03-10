@@ -7,7 +7,7 @@ import Toggleable from './Togglable'
 import QuoteForm from './RumorPage/QuoteForm'
 
 // Styles
-import {Container, Divider} from 'semantic-ui-react'
+import {Divider} from 'semantic-ui-react'
 
 const RumorPage = ({
     quoteFormRef,
@@ -21,13 +21,19 @@ const RumorPage = ({
     handleDeleteOf,
     toggleUsedOf,
     showDeleteWarning,
-    setShowDeleteWarning
+    setShowDeleteWarning,
+    chapterSelection,
+    setChapterSelection,
+    randomQuote,
+    setRandomQuote
 }) => {
     return (
     <div>
         <QuoteButtons
             setShowQuotes={setShowQuotes}
             showQuotes={showQuotes}
+            chapterSelection={chapterSelection}
+            setChapterSelection={setChapterSelection}
         />
         <Divider hidden/>
         <Toggleable buttonLabel="new rumor" ref={quoteFormRef}>
@@ -45,6 +51,8 @@ const RumorPage = ({
             toggleUsedOf={toggleUsedOf}
             showDeleteWarning={showDeleteWarning}
             setShowDeleteWarning={setShowDeleteWarning}
+            randomQuote={randomQuote}
+            setRandomQuote={setRandomQuote}
         />
     </div>
     )

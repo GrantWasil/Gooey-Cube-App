@@ -1,15 +1,33 @@
 import React from 'react'
-import {Button, Menu} from 'semantic-ui-react'
+import {Button, Menu, Dropdown} from 'semantic-ui-react'
 
-// Components 
+const chapterOptions = [
+  { key: 1, text: 'One', value: 1 },
+  { key: 2, text: 'Two', value: 2 },
+  { key: 3, text: 'Three', value: 3}
+]
 
 const QuoteButtons = ({ 
   setShowQuotes,
   showQuotes,
+  chapterSelection,
+  setChapterSelection
  }) => {
+
+  const handleChange = (event) => {
+    setChapterSelection(event.target.value)
+  }
 
   return (
       <Menu secondary>
+        <Menu.Item>
+          <Dropdown
+            onChange={handleChange}
+            options={chapterOptions}
+            selection
+            value={chapterSelection}
+          />
+        </Menu.Item>
         <Menu.Item>
           <Button
             color='teal'

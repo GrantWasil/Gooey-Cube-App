@@ -15,7 +15,7 @@ const GetStarted = ({visible, setVisibile, username, password, handleLogin}) => 
               {visible ?
               <div>
               <Header as='h1' color='green' textAlign='center'>
-                GooeyHelper
+                GooeyHelper Beta
               </Header>
                 <Button icon labelPosition='right' fluid size='large' onClick={() => setVisibile(!visible)}>
                   Get Started
